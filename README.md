@@ -1,6 +1,51 @@
-# Web_quan_ly_luyen_tap_the_thao
+#  Web Quản Lý Luyện Tập Thể Thao
 
-Web sẽ có 3 chức năng chính là quản lí người dùng, quản lí bài tập và quản lí chế độ ăn uống.
-Quản lí người dùng sẽ cho phép người dùng quản lí thông tin đăng nhập và hồ sơ cá nhân của mình, đồng thời xem được lịch sự tập luyện.
-Quản lí bài tập cho phép người dùng xem danh sách các bài tập và video hướng dẫn cụ thể, người dùng cũng có thể tự tạo bài tập cá nhân phù hợp với mỗi người và có thể xem được tiến độ tập luyện.
-Quản lí chế độ ăn uống cho phép người dùng lập kế hoạch ăn uống để có thể tăng hay giảm cân, web sẽ tính tổng số calo của thực đơn mà người dùng đã thêm vào hay có thể gợi ý 1 số thực đơn tăng cân hoặc giảm cân cho người dùng.
+Ứng dụng web giúp người dùng theo dõi quá trình luyện tập thể thao, quản lý bài tập và xây dựng kế hoạch dinh dưỡng một cách thông minh và tiện lợi.
+
+---
+
+##  Tính năng chính
+
+###  Quản lý người dùng
+- Đăng ký, đăng nhập, cập nhật hồ sơ cá nhân.
+- Quản lý thông tin cá nhân: chiều cao, cân nặng.
+- Xem lại lịch sử luyện tập cá nhân.
+
+###  Quản lý bài tập
+- Xem danh sách các bài tập có video hướng dẫn cụ thể.
+- Tạo bài tập cá nhân phù hợp với từng người dùng.
+- Theo dõi tiến độ tập luyện qua lịch sử và thời gian luyện tập.
+
+###  Quản lý chế độ ăn uống
+- Tạo kế hoạch dinh dưỡng phù hợp với mục tiêu tăng/giảm cân.
+- Tính tổng calo mỗi ngày từ thực đơn đã nhập.
+- Gợi ý thực đơn mẫu cho từng mục tiêu.
+
+---
+
+## Công nghệ sử dụng
+
+- **Flask** – Python web framework
+- **Flask-SQLAlchemy** – ORM để quản lý cơ sở dữ liệu
+- **SQLite** – Cơ sở dữ liệu mặc định, có thể mở rộng sang PostgreSQL / MySQL
+- **HTML/CSS/JS** – Giao diện người dùng (tuỳ biến thêm)
+
+---
+
+##  Mô hình cơ sở dữ liệu
+
+### Bảng `users`
+- `user_id`, `username`, `email`, `password`, `role`, `height`, `weight`
+
+### Bảng `workouts`
+- `workout_id`, `title`, `description`, `video_url`
+
+### Bảng `workout_history`
+- `id`, `user_id`, `workout_id`, `date`, `duration_minutes`
+
+### Bảng `nutrition_plans`
+- `nutrition_plan_id`, `user_id`, `plan_name`, `calories_per_day`
+
+---
+
+
