@@ -1,11 +1,71 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for, session
+from flask_session import Session
 from models import *
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:123456789@Localhost:5432/WebProject'
+
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+Session(app)
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:123456789@Localhost:5432/Web_quan_ly_luyen_tap_the_thao'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
-@app.route('/')
+# Trang chủ
+@app.route("/",)
 def index():
-    return render_template('index.html')
+    return render_template("index.html", name = session.get("username"))
+
+# Chức năng đăng ký
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        username = request.form.get("username")
+        email = request.form.get("email")
+        password = request.form.get("password")
+        height = request.form.get("height")
+        weight = request.form.get("weight")
+
+        # Kiểm tra xem người dùng đã tồn tại chưa
+        existing_user = User.query.filter_by(username=username).first()
+        if existing_user:
+            return render_template("register.html", error="Tên đăng nhập đã tồn tại")
+
+        # Tạo người dùng mới
+        new_user = User(username=username, email=email, password=password, height=height, weight=weight)
+        db.session.add(new_user)
+        db.session.commit()
+        return redirect(url_for("index"))   
+    return render_template("register.html")
+
+
+# Chức năng đăng nhập
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password")
+
+        # Truy vấn người dùng trong bảng users
+        user = User.query.filter_by(username=username).first()
+
+        if user and user.password == password:
+            session["username"] = user.username
+            return redirect(url_for("index"))
+        else:
+            return render_template("index.html", error="Sai tên đăng nhập hoặc mật khẩu")
+
+    return render_template("index.html")
+
+# Chức năng đăng xuất
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect("/")
+
+
+if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()
+    app.run(debug=True)
