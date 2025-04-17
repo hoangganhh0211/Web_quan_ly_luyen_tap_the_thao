@@ -30,7 +30,7 @@
 
 - **Flask** – Python web framework
 - **Flask-SQLAlchemy** – ORM để quản lý cơ sở dữ liệu
-- **SQLite** – Cơ sở dữ liệu mặc định, có thể mở rộng sang PostgreSQL / MySQL
+- **PostgreSQL** – Cơ sở dữ liệu mặc định,
 - **HTML/CSS/JS** – Giao diện người dùng (tuỳ biến thêm)
 
 ---
