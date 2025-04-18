@@ -2,15 +2,18 @@
 
 {% block body %}
 <h2>Đăng ký tài khoản</h2>
-<form action="/register" method="post">
-    <input type="text" name="username" placeholder="Tên đăng nhập" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="password" name="password" placeholder="Mật khẩu" required>
-    <input type="text" name="height" placeholder="Chiều cao (cm)" required>
-    <input type="text" name="weight" placeholder="Cân nặng (kg)" required>
-    <button type="submit">Đăng ký</button>
-    {% if error %}
-        <p style="color: red;">{{ error }}</p>
-    {% endif %}
-</form>
+<div class="register-form">
+    <form action="/register" method="post">
+        <input type="text" name="username" placeholder="Tên đăng nhập" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Mật khẩu" required>
+        <input type="text" name="height" placeholder="Chiều cao (cm)" required>
+        <input type="text" name="weight" placeholder="Cân nặng (kg)" required>
+        <button type="submit">Đăng ký</button>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+    </form>
+    <p>Đã có tài khoản? <a href="/login">Đăng nhập</a></p>
+</div>
 {% endblock %}

@@ -25,6 +25,8 @@ footer {
     padding: 10px;
     margin-top: 20px;
 }
+
+/* Hiệu ứng cho phần đăng nhập và đăng ký */
 .login-form {
     max-width: 400px;
     margin: 100px auto;
@@ -73,16 +75,160 @@ footer {
 .login-form button:hover {
     background-color: #005bb5;
 }
-
 .login-form a {
-    display: block;
-    text-align: center;
-    margin-top: 15px;
-    color: #0066cc;
     text-decoration: none;
+    color: blue;
+}
+
+.register-form {
+    max-width: 450px;
+    margin: 100px auto;
+    padding: 40px 30px;
+    background: #fdfdfd;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.register-form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.register-form input[type="text"],
+.register-form input[type="email"],
+.register-form input[type="password"] {
+    width: 90%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-size: 15px;
+}
+
+.register-form input:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.2);
+    outline: none;
+}
+
+.register-form button {
+    width: 97.5%;
+    padding: 12px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-form button:hover {
+    background-color: #005bb5;
+}
+
+.register-form a {
+    text-decoration: none;
+    color: blue;
+}
+
+/* Hiệu ứng cho phần navbar */
+navbar {
+    display: block;
+    background-color: #0066cc;
+    padding: 15px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+navbar ul li {
+    display: inline;
+}
+
+navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+navbar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #f0f0f0;
+}
+
+/*Hiệu ứng cho phần cập nhật thông tin cá nhân*/
+.update-profile-form {
+    max-width: 450px;
+    margin: 100px auto;
+    padding: 40px 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.update-profile-form h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: #333;
+}
+
+.update-profile-form input[type="text"],
+.update-profile-form input[type="number"] {
+    width: 90%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.update-profile-form input:focus {
+    border-color: #17a2b8;
+    box-shadow: 0 0 8px rgba(23, 162, 184, 0.2);
+    outline: none;
+}
+
+.update-profile-form button {
+    width: 97.5%;
+    padding: 12px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.update-profile-form button:hover {
+    background-color: #005bb5;
+}
+
+.update-profile-form p {
+    margin-top: 15px;
+    color: red;
+    text-align: center;
     font-size: 14px;
 }
 
-.login-form a:hover {
-    text-decoration: underline;
-}

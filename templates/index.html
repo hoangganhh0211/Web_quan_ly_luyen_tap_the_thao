@@ -1,5 +1,7 @@
-{% extends "layout.html" %} {% block body %} {% if session["username"] %} Xin
-chào {{session["username"]}} <a href="/logout"> Đăng xuất</a>
+{% extends "layout.html" %} 
+{% block body %} 
+{% if session["username"] %}
+  
 {% else %}
 <div class="login-form">
   <form action="/login" method="post">
@@ -7,7 +9,7 @@ chào {{session["username"]}} <a href="/logout"> Đăng xuất</a>
     <input type="password" name="password" placeholder="Password" required />
     <button type="submit">Đăng nhập</button>
   </form>
-  <a href="/register">Đăng ký</a>
+  <p>Chưa có tài khoản? <a href="/register">Đăng ký</a></p>
   {% if error %}
   <p style="color: red">{{ error }}</p>
   {% endif %} {% endif %}

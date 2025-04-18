@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>{% block title %}Quản Lý Luyện Tập{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
     <header>
-        <h1>Web luyện tập thể thao</h1>
+      <h1>Web luyện tập thể thao</h1>
     </header>
-    <main>
-        {% block body %}{% endblock %}
-    </main>
+    {% if session["username"] %}
+    <navbar>
+      <ul>
+        <li><a href="/">Trang chủ</a></li>
+        <li><a href="/show_profile">Thông tin cá nhân</a></li>
+        <li><a href="/workout">Danh sách bài tập</a></li>
+        <li><a href="/workout_history">Lịch sử tập luyện</a></li>
+        <li><a href="/nutrition_plan">Kế hoạch dinh dưỡng</a></li>
+      </ul>
+    </navbar>
+    {% endif %}
+    <main>{% block body %} {% endblock %}</main>
     <footer>
-        <p>&copy; 2025 - Quản lý luyện tập thể thao</p>
+      <p>&copy; 2025 - Quản lý luyện tập thể thao</p>
     </footer>
-</body>
+  </body>
 </html>

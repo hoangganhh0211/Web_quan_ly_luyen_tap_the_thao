@@ -64,6 +64,29 @@ def logout():
     session.clear()
     return redirect("/")
 
+# Chức năng xem thông tin cá nhân
+@app.route("/show_profile")
+def show_profile():
+    if "username" in session:
+        username = session["username"]
+        users = User.query.filter_by(username=username).first()
+    return render_template("showprofile.html", users=users)
+
+# Chức năng cập nhật thông tin cá nhân
+@app.route("/update_profile", methods=["GET", "POST"])
+def update_profile():
+    if "username" in session:
+        username = session["username"]
+        users = User.query.filter_by(username=username).first()
+
+        if request.method == "POST":
+            users.username = request.form.get("username")
+            users.height = request.form.get("height")
+            users.weight = request.form.get("weight")
+            db.session.commit()
+            return redirect(url_for("show_profile"))
+
+        return render_template("update_profile.html", users=users)
 
 if __name__ == '__main__':
     with app.app_context():

@@ -1,0 +1,11 @@
+{% extends "layout.html" %} {% block body %}
+<div>
+  <h1>Thông tin tài khoản</h1>
+  <p>Tên đăng nhập: {{ users.username }}</p>
+  <p>Email: {{ users.email }}</p>
+  <p>Chiều cao: {{ users.height }}</p>
+  <p>Cân nặng: {{ users.weight }}</p>
+  <a href="/update_profile">Chỉnh sửa thông tin</a>
+  <a href="/logout">Đăng xuất</a>
+</div>
+{% endblock %}
