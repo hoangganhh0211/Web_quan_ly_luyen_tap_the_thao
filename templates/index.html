@@ -1,7 +1,16 @@
 {% extends "layout.html" %} 
 {% block body %} 
 {% if session["username"] %}
-  
+  <div class="welcome-message">
+    <h1>Xin chào {{ session["username"]}}. Bạn là người mới ? </h1>
+    <a href="/show_workout"> Hãy bắt đầu ngay hôm nay</a>
+    <img src="static\index_logo.png" alt="">
+  </div>
+  <div class="index-logo-nutrition-plan">
+    <h1>Chế độ dinh dưỡng</h1>
+    <img src="static\index_logo_nutrition_plan.png" alt="">
+    <a href="show_nutrition_plan"> Lập kế hoạch ngay</a>
+  </div>
 {% else %}
 <div class="login-form">
   <form action="/login" method="post">

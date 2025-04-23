@@ -80,13 +80,36 @@ def update_profile():
         users = User.query.filter_by(username=username).first()
 
         if request.method == "POST":
-            users.username = request.form.get("username")
             users.height = request.form.get("height")
             users.weight = request.form.get("weight")
             db.session.commit()
             return redirect(url_for("show_profile"))
 
         return render_template("update_profile.html", users=users)
+
+# Chức năng thêm bài tập
+@app.route("/add_workout", methods=["GET", "POST"])
+def add_workout():
+    if request.method == "POST":
+        title = request.form.get("title")
+        description = request.form.get("description")
+        video_url = request.form.get("video_url")
+
+        # Tạo bài tập mới
+        new_workout = Workout(title=title, description=description, video_url=video_url)
+        db.session.add(new_workout)
+        db.session.commit()
+        return redirect(url_for("show_workout"))
+    return render_template("add_workout.html")
+
+# Chức năng xem danh sách bài tập
+@app.route("/show_workout")
+def show_workout():
+    if "username" in session:
+        username = session["username"]
+        workouts = Workout.query.all()
+        return render_template("show_workout.html", workouts=workouts, name=username)
+    return redirect(url_for("login"))
 
 if __name__ == '__main__':
     with app.app_context():

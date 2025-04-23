@@ -25,6 +25,79 @@ footer {
     padding: 10px;
     margin-top: 20px;
 }
+/* Hiệu ứng cho trang chủ */
+.welcome-message {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 400px;
+  margin: 50px auto;
+  text-align: center;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.welcome-message img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+}
+
+.welcome-message h1,
+.welcome-message a {
+  position: relative;
+  z-index: 2;
+}
+
+.welcome-message h1 {
+  font-size: 2.5rem;
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+
+.welcome-message a {
+  padding: 12px 25px;
+  background-color: #0066cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.welcome-message a:hover {
+  background-color: #005bb5;
+}
+
+.index-logo-nutrition-plan {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.index-logo-nutrition-plan a{
+  width: 97.5%;
+  padding: 12px;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.index-logo-nutrition-plan a:hover {
+    background-color: #005bb5;
+}
+
 
 /* Hiệu ứng cho phần đăng nhập và đăng ký */
 .login-form {
@@ -172,6 +245,54 @@ navbar ul li a:hover {
     background-color: rgba(255, 255, 255, 0.2);
     color: #f0f0f0;
 }
+/*Hiệu ứng cho phần thông tin cá nhân*/
+.profile-info {
+  width: 60%;
+  margin: 50px auto;
+  padding: 25px;
+  background-color: #f7f9fc;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.profile-info h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.profile-info p {
+  font-size: 16px;
+  margin: 10px 0;
+  padding-left: 10px;
+  border-left: 3px solid #3498db;
+}
+
+.profile-info a {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.profile-info a {
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold; 
+}
+
+.profile-info a {
+  background-color: #0066cc;
+  color: white;
+}
+
+.profile-info a:hover {
+  background-color: #005bb5;
+}
+
 
 /*Hiệu ứng cho phần cập nhật thông tin cá nhân*/
 .update-profile-form {
@@ -231,4 +352,87 @@ navbar ul li a:hover {
     text-align: center;
     font-size: 14px;
 }
+
+/* Hiệu ứng cho phần danh sách bài tập */
+.workout-info {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+  }
+  
+  .workout-info h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+  }
+  
+  .workout-info p {
+    font-size: 16px;
+    margin: 8px 0;
+    line-height: 1.6;
+  }
+  
+  .workout-info a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .workout-info a:hover {
+    text-decoration: underline;
+  }
+  
+  .workout-info iframe {
+    width: 100%;
+    height: 400px;
+    margin: 20px 0;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  a[href*="/add_workout"]{
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #0066cc;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+
+  .workout-info a[href*="/update_workout"],
+  .workout-info a[href*="/delete_workout"] {
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #0066cc;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+  
+  .workout-info a[href*="/delete_workout"] {
+    background-color: #dc3545;
+  }
+  
+  a[href*="/add_workout"]:hover{
+    background-color: #005bb5;
+  }
+
+  .workout-info a[href*="/update_workout"]:hover {
+    background-color: #005bb5;
+  }
+  
+  .workout-info a[href*="/delete_workout"]:hover {
+    background-color: #c82333;
+  }
+
 

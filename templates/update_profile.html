@@ -4,7 +4,7 @@
 <div class="update-profile-form">
   <h1>Chỉnh sửa thông tin cá nhân</h1>
   <form action="/update_profile" method="post">
-    <input type="text" name="username" placeholder="Tên đăng nhập" value="{{ users.username }}" required />
+    <input type="text" name="username" placeholder="Tên đăng nhập" value="{{ users.username }}" readonly />
     <input type="number" name="height" placeholder="Chiều cao (cm)" value="{{ users.height }}" required />
     <input type="number" name="weight" placeholder="Cân nặng (kg)" value="{{ users.weight }}" required />
     <button type="submit">Cập nhật</button>
