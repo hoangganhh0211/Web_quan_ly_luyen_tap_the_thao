@@ -354,6 +354,43 @@ navbar ul li a:hover {
 }
 
 /* Hiệu ứng cho phần danh sách bài tập */
+.workout-list {
+  width: 100%;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.workout-list h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.workout-list a {
+  display: block;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  background-color: #e9f3ff;
+  border-left: 6px solid #007bff;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.workout-list a:hover {
+  background-color: #d0e7ff;
+  transform: translateX(4px);
+}
+
+
+/* Hiệu ứng cho phần danh sách chi tiết bài tập */
 .workout-info {
     max-width: 900px;
     margin: 40px auto;
@@ -435,4 +472,103 @@ navbar ul li a:hover {
     background-color: #c82333;
   }
 
+/* Hiệu ứng cho phần thêm bài tập */
+.add-workout-form {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.add-workout-form h1 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.add-workout-form form input[type="text"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.add-workout-form form button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #0066cc;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-workout-form form button[type="submit"]:hover {
+  background-color: #005bb5;
+}
+
+.add-workout-form p {
+  margin-top: 15px;
+  font-size: 0.95rem;
+}
+
+/* Hiệu ứng cho phần cập nhật bài tập */
+.update-workout-form {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.update-workout-form h1 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.update-workout-form form input[type="text"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.update-workout-form form button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #0066cc;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.update-workout-form form button[type="submit"]:hover {
+  background-color: #005bb5;
+}
+
+.update-workout-form p {
+  margin-top: 15px;
+  font-size: 0.95rem;
+}
 

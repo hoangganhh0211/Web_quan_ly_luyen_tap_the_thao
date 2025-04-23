@@ -105,11 +105,35 @@ def add_workout():
 # Chức năng xem danh sách bài tập
 @app.route("/show_workout")
 def show_workout():
-    if "username" in session:
-        username = session["username"]
-        workouts = Workout.query.all()
-        return render_template("show_workout.html", workouts=workouts, name=username)
-    return redirect(url_for("login"))
+    workouts = Workout.query.all()
+    return render_template("show_workout.html", workouts=workouts)
+
+# Chức năng xem chi tiết bài tập
+@app.route("/workout_info/<int:id>")
+def workout_info(id):
+    workout = Workout.query.get_or_404(id)
+    return render_template("workout_info.html", workout=workout)
+
+# Chức năng chỉnh sửa bài tập
+@app.route("/update_workout/<int:id>", methods=["GET", "POST"])
+def update_workout(id):
+    workout = Workout.query.get_or_404(id)
+    if request.method == "POST":
+        workout.title = request.form.get("title")
+        workout.description = request.form.get("description")
+        workout.video_url = request.form.get("video_url")
+        db.session.commit()
+        return redirect(url_for("show_workout"))
+    return render_template("update_workout.html", workout=workout)
+
+# Chức năng xóa bài tập
+@app.route("/delete_workout/<int:id>")
+def delete_workout(id):
+    workout = Workout.query.get_or_404(id)
+    db.session.delete(workout)
+    db.session.commit()
+    return redirect(url_for("show_workout"))
+
 
 if __name__ == '__main__':
     with app.app_context():

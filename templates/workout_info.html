@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body %}
+  <div class="workout-info">
+      <h1>Thông tin chi tiết bài tập</h1>
+      <p>Tên bài tập: {{ workout.title }}</p>
+      <p>Mô tả: {{ workout.description }}</p>
+      <iframe
+        width="1521"
+        height="526"
+        src="{{ workout.video_url}}"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+        {% if session["username"] == "admin" %}
+        <a href="/update_workout/{{ workout.workout_id }}">Chỉnh sửa bài tập</a>
+        <a href="/delete_workout/{{ workout.workout_id }}">Xóa bài tập</a>
+        {% endif %} 
+  </div>
+{% endblock %}
