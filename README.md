@@ -15,14 +15,10 @@
 ### Quản lý bài tập
 
 - Xem danh sách các bài tập có video hướng dẫn cụ thể.
-- Tạo bài tập cá nhân phù hợp với từng người dùng.
-- Theo dõi tiến độ tập luyện qua lịch sử và thời gian luyện tập.
 
 ### Quản lý chế độ ăn uống
 
-- Tạo kế hoạch dinh dưỡng phù hợp với mục tiêu tăng/giảm cân.
-- Tính tổng calo mỗi ngày từ thực đơn đã nhập.
-- Gợi ý thực đơn mẫu cho từng mục tiêu.
+- Xem các kế hoạch dinh dưỡng có sẵn
 
 ---
 
@@ -31,7 +27,7 @@
 - **Flask** – Python web framework
 - **Flask-SQLAlchemy** – ORM để quản lý cơ sở dữ liệu
 - **PostgreSQL** – Cơ sở dữ liệu mặc định,
-- **HTML/CSS/JS** – Giao diện người dùng (tuỳ biến thêm)
+- **HTML/CSS** – Giao diện người dùng (tuỳ biến thêm)
 
 ---
 
@@ -51,6 +47,5 @@
 
 ### Bảng `nutrition_plans`
 
-- `nutrition_plan_id`, `user_id`, `plan_name`, `calories_per_day`
-
+- `nutrition_plan_id`, `plan_name`, `plan_description`, `food_item`, `calories`
 ---
