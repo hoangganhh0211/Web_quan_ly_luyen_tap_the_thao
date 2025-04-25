@@ -1,0 +1,14 @@
+{% extends "layout.html" %} {% block body %}
+<div class="add-workout-form">
+  <h1>Thêm bài tập</h1>
+  <form action="/add_workout" method="post">
+    <input type="text" name="title" placeholder="Tên bài tập" required />
+    <input type="text" name="description" placeholder="Mô tả" required />
+    <input type="text" name="video_url" placeholder="Link video" required />
+    <button type="submit">Thêm bài tập</button>
+  </form>
+  {% if error %}
+  <p style="color: red">{{ error }}</p>
+  {% endif %}
+</div>
+{% endblock %}

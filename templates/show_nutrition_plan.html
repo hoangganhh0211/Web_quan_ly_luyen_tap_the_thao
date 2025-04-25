@@ -1,0 +1,14 @@
+{% extends "layout.html" %} {% block body %} {% if session["username"] ==
+"admin" %}
+<a href="/add_nutrition_plan">Thêm kế hoạch dinh dưỡng</a>
+{% endif %}
+<div class="nutrition-plan">
+  <h1>Kế hoạch dinh dưỡng</h1>
+  {% for nutrition_plan in nutrition_plans %}
+  <h2>{{ nutrition_plan.plan_name }}</h2>
+  <p>{{ nutrition_plan.plan_description }}</p>
+  <a href="/nutrition_plan_detail/{{nutrition_plan.nutrition_plan_id}}">Xem chi tiết</a>
+  <a href="/delete_nutrition_plan/{{ nutrition_plan.nutrition_plan_id}}">Xóa</a>
+  {% endfor %}
+</div>
+{% endblock %}

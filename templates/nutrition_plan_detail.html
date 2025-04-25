@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block body %}
+  <div class="nutrition-plan-detail">
+    <h1>Thông tin chi tiết kế hoạch dinh dưỡng</h1>
+      <p>Tên Kế hoạch: {{ nutrition_plan.plan_name }}</p>
+      <p>Mô tả: {{ nutrition_plan.plan_description }}</p>
+      <p>Danh sách các thực phẩm: {{ nutrition_plan.food_item }}</p>
+      <p>Tổng lượng calo: {{ nutrition_plan.calories }}</p>
+        {% if session["username"] == "admin" %}
+        <a href="/update_nutrition_plan/{{ nutrition_plan.nutrition_plan_id }}">Chỉnh sửa thông tin kế hoạch dinh dưỡng</a>
+        {% endif %} 
+  </div>
+{% endblock %}

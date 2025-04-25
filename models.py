@@ -15,7 +15,6 @@ class User(db.Model):
     weight = db.Column(db.Float)
 
     workouts = db.relationship("WorkoutHistory", backref="user", lazy=True)
-    nutrition_plans = db.relationship("NutritionPlan", backref="user", lazy=True)
 
 # Bảng bài tập
 class Workout(db.Model):
@@ -40,6 +39,9 @@ class WorkoutHistory(db.Model):
 class NutritionPlan(db.Model):
     __tablename__ = "nutrition_plans"
     nutrition_plan_id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"), nullable=False)
     plan_name = db.Column(db.String(100), nullable=False)
-    calories_per_day = db.Column(db.Float)
+    plan_description = db.Column(db.Text)
+    food_item = db.Column(db.String(100), nullable=False)
+    calories = db.Column(db.Float)
+    
+    

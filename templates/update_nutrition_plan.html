@@ -1,0 +1,18 @@
+{% extends "layout.html" %} 
+{% block body %}
+<div class="update-nutrition-plan-form">
+  <h1>Chỉnh sửa kế hoạch dinh dưỡng</h1>
+  {% if nutrition_plan %}
+  <form action="{{ url_for('update_nutrition_plan', id=nutrition_plan.nutrition_plan_id) }}" method="post">
+    <input type="text" name="plan_name" value="{{ nutrition_plan.plan_name}}" required />
+    <input type="text" name="plan_description" value="{{ nutrition_plan.plan_description}}" required />
+    <input type="text" name="food_item" value="{{ nutrition_plan.food_item}}" required />
+    <input type="text" name="calories" value="{{ nutrition_plan.calories}}" required />
+    <button type="submit">Chỉnh sửa kế hoạch dinh dưỡng</button>
+  </form>
+  {% endif %}
+  {% if error %}
+  <p style="color: red">{{ error }}</p>
+  {% endif %}
+</div>
+{% endblock %}

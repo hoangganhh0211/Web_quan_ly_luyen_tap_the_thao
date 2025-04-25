@@ -134,6 +134,54 @@ def delete_workout(id):
     db.session.commit()
     return redirect(url_for("show_workout"))
 
+# Chức năng xem kế hoạch dinh dưỡng
+@app.route("/show_nutrition_plan")
+def show_nutrition_plan():
+    nutrition_plans = NutritionPlan.query.all()
+    return render_template("show_nutrition_plan.html", nutrition_plans=nutrition_plans)
+
+# Chức năng thêm kế hoạch dinh dưỡng
+@app.route("/add_nutrition_plan", methods=["GET", "POST"])
+def add_nutrition_plan():
+    if request.method == "POST":
+        plan_name = request.form.get("plan_name")
+        plan_description = request.form.get("plan_description")
+        food_item = request.form.get("food_item")
+        calories = request.form.get("calories")
+
+        # Tạo kế hoạch dinh dưỡng mới
+        new_plan = NutritionPlan(plan_name=plan_name, plan_description=plan_description, food_item=food_item, calories=calories)
+        db.session.add(new_plan)
+        db.session.commit()
+        return redirect(url_for("show_nutrition_plan"))
+    return render_template("add_nutrition_plan.html")
+
+# Chức năng xem chi tiết kế hoạch dinh dưỡng
+@app.route("/nutrition_plan_detail/<int:id>")
+def nutrition_plan_detail(id):
+    nutrition_plan = NutritionPlan.query.get_or_404(id)
+    return render_template("nutrition_plan_detail.html", nutrition_plan=nutrition_plan)
+
+# Chức năng chỉnh sửa kế hoạch dinh dưỡng
+@app.route("/update_nutrition_plan/<int:id>", methods=["GET", "POST"])
+def update_nutrition_plan(id):
+    nutrition_plan = NutritionPlan.query.get_or_404(id)
+    if request.method == "POST":
+        nutrition_plan.plan_name = request.form.get("plan_name")
+        nutrition_plan.plan_description = request.form.get("plan_description")
+        nutrition_plan.food_item = request.form.get("food_item")
+        nutrition_plan.calories = request.form.get("calories")
+        db.session.commit()
+        return redirect(url_for("show_nutrition_plan"))
+    return render_template("update_nutrition_plan.html", nutrition_plan=nutrition_plan)
+
+@app.route("/delete_nutrition_plan/<int:id>")
+def delete_nutrition_plan(id):
+    nutrition_plan = NutritionPlan.query.get_or_404(id)
+    db.session.delete(nutrition_plan)
+    db.session.commit()
+    return redirect(url_for("show_nutrition_plan"))
+
 
 if __name__ == '__main__':
     with app.app_context():

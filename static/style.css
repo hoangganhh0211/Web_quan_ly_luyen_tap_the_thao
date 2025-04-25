@@ -376,17 +376,14 @@ navbar ul li a:hover {
   padding: 15px 20px;
   margin-bottom: 12px;
   background-color: #e9f3ff;
-  border-left: 6px solid #007bff;
   border-radius: 8px;
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  transition: background-color 0.3s, transform 0.2s;
 }
 
 .workout-list a:hover {
   background-color: #d0e7ff;
-  transform: translateX(4px);
 }
 
 
@@ -445,7 +442,8 @@ navbar ul li a:hover {
   }
 
   .workout-info a[href*="/update_workout"],
-  .workout-info a[href*="/delete_workout"] {
+  .workout-info a[href*="/delete_workout"]
+  {
     display: inline-block;
     margin-right: 10px;
     margin-top: 10px;
@@ -572,3 +570,172 @@ navbar ul li a:hover {
   font-size: 0.95rem;
 }
 
+/* Hiệu ứng cho phần kế hoạch dinh dưỡng */
+.nutrition-plan {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f9fcff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.nutrition-plan h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+a[href="/add_nutrition_plan"] {
+  display: inline-block;
+  padding: 12px 20px;
+  margin-bottom: 30px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+a[href="/add_nutrition_plan"]:hover {
+  background-color: #0056b3;
+}
+
+.nutrition-plan h2 {
+  font-size: 1.5rem;
+  color: #34495e;
+  margin-top: 20px;
+}
+
+.nutrition-plan p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.nutrition-plan a[href*="/nutrition_plan_detail"],
+.nutrition-plan a[href*="/delete_nutrition_plan"] {
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #0066cc;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.nutrition-plan a[href*="/delete_nutrition_plan"] {
+  background-color: #dc3545;
+}
+
+.nutrition-plan a[href*="/nutrition_plan_detail"]:hover {
+  background-color: #005bb5;
+}
+
+.nutrition-plan a[href*="/delete_nutrition_plan"]:hover {
+  background-color: #c82333;
+}
+
+/* Hiệu ứng cho phần thêm kế hoạch dinh dưỡng */
+.add-nutrition-plan-form {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.add-nutrition-plan-form h1 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.add-nutrition-plan-form form input[type="text"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.add-nutrition-plan-form button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #0066cc;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-nutrition-plan-form form button[type="submit"]:hover {
+  background-color: #005bb5;
+}
+
+.add-nutrition-plan-form p {
+  margin-top: 15px;
+  font-size: 0.95rem;
+}
+
+/* Hiệu ứng cho phần cập nhật kế hoạch dinh dưỡng */
+.update-nutrition-plan-form {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.update-nutrition-plan-form h1 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.update-nutrition-plan-form form input[type="text"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.update-nutrition-plan-form button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #0066cc;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.update-nutrition-plan-form form button[type="submit"]:hover {
+  background-color: #005bb5;
+}
+
+.update-nutrition-plan-form p {
+  margin-top: 15px;
+  font-size: 0.95rem;
+}
