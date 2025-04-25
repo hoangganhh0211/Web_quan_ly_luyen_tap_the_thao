@@ -43,7 +43,7 @@
 
 ### Bảng `workout_history`
 
-- `id`, `user_id`, `workout_id`, `date`, `duration_minutes`
+- `id`, `user_id`, `workout_id`, `date`
 
 ### Bảng `nutrition_plans`
 

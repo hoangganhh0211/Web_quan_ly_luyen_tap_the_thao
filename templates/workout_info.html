@@ -16,6 +16,10 @@
         {% if session["username"] == "admin" %}
         <a href="/update_workout/{{ workout.workout_id }}">Chỉnh sửa bài tập</a>
         <a href="/delete_workout/{{ workout.workout_id }}">Xóa bài tập</a>
+        {% else %}
+        <form class="add-workout-history-form" action="{{ url_for('add_workout_history', id=workout.workout_id) }}" method="POST">
+          <button type="submit">Thêm vào lịch sử tập luyện</button>
+        </form>      
         {% endif %} 
   </div>
 {% endblock %}

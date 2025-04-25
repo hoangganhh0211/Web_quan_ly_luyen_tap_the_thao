@@ -389,86 +389,101 @@ navbar ul li a:hover {
 
 /* Hiệu ứng cho phần danh sách chi tiết bài tập */
 .workout-info {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 30px;
-    background-color: #f8f9fa;
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    font-family: 'Segoe UI', sans-serif;
-    color: #333;
-  }
-  
-  .workout-info h1 {
-    text-align: center;
-    color: #2c3e50;
-    margin-bottom: 30px;
-  }
-  
-  .workout-info p {
-    font-size: 16px;
-    margin: 8px 0;
-    line-height: 1.6;
-  }
-  
-  .workout-info a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: 500;
-  }
-  
-  .workout-info a:hover {
-    text-decoration: underline;
-  }
-  
-  .workout-info iframe {
-    width: 100%;
-    height: 400px;
-    margin: 20px 0;
-    border-radius: 10px;
-    border: none;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  
-  a[href*="/add_workout"]{
-    display: inline-block;
-    margin-right: 10px;
-    margin-top: 10px;
-    padding: 8px 15px;
-    background-color: #0066cc;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-  }
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
 
-  .workout-info a[href*="/update_workout"],
-  .workout-info a[href*="/delete_workout"]
-  {
-    display: inline-block;
-    margin-right: 10px;
-    margin-top: 10px;
-    padding: 8px 15px;
-    background-color: #0066cc;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-  }
-  
-  .workout-info a[href*="/delete_workout"] {
-    background-color: #dc3545;
-  }
-  
-  a[href*="/add_workout"]:hover{
-    background-color: #005bb5;
-  }
+.workout-info h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
 
-  .workout-info a[href*="/update_workout"]:hover {
-    background-color: #005bb5;
-  }
-  
-  .workout-info a[href*="/delete_workout"]:hover {
-    background-color: #c82333;
-  }
+.workout-info p {
+  font-size: 16px;
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+.workout-info a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.workout-info a:hover {
+  text-decoration: underline;
+}
+
+.workout-info iframe {
+  width: 100%;
+  height: 400px;
+  margin: 20px 0;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+a[href*="/add_workout"]{
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #0066cc;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.workout-info a[href*="/update_workout"],
+.workout-info a[href*="/delete_workout"]
+{
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #0066cc;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.workout-info a[href*="/delete_workout"] {
+  background-color: #dc3545;
+}
+
+a[href*="/add_workout"]:hover{
+  background-color: #005bb5;
+}
+
+.workout-info a[href*="/update_workout"]:hover {
+  background-color: #005bb5;
+}
+
+.workout-info a[href*="/delete_workout"]:hover {
+  background-color: #c82333;
+}
+
+.add-workout-history-form button {
+  width: 30%;
+  padding: 12px;
+  background-color: #0066cc;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.add-workout-history-form button:hover {
+  background-color: #005bb5;
+}
 
 /* Hiệu ứng cho phần thêm bài tập */
 .add-workout-form {
@@ -592,10 +607,9 @@ a[href="/add_nutrition_plan"] {
   display: inline-block;
   padding: 12px 20px;
   margin-bottom: 30px;
-  background-color: #007bff;
+  background-color: #0066cc;
   color: white;
   text-decoration: none;
-  font-weight: bold;
   border-radius: 8px;
   transition: background-color 0.3s ease;
 }

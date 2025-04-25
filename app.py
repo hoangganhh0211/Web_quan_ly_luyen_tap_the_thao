@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_session import Session
 from models import *
+from datetime import date
 
 app = Flask(__name__)
 
@@ -108,7 +109,7 @@ def show_workout():
     workouts = Workout.query.all()
     return render_template("show_workout.html", workouts=workouts)
 
-# Chức năng xem chi tiết bài tập
+# Chức năng xem chi tiết bài tập và lưu vào lịch sử tập luyện
 @app.route("/workout_info/<int:id>")
 def workout_info(id):
     workout = Workout.query.get_or_404(id)
@@ -175,6 +176,7 @@ def update_nutrition_plan(id):
         return redirect(url_for("show_nutrition_plan"))
     return render_template("update_nutrition_plan.html", nutrition_plan=nutrition_plan)
 
+# Chức năng xóa kế hoạch dinh dưỡng
 @app.route("/delete_nutrition_plan/<int:id>")
 def delete_nutrition_plan(id):
     nutrition_plan = NutritionPlan.query.get_or_404(id)
@@ -182,6 +184,42 @@ def delete_nutrition_plan(id):
     db.session.commit()
     return redirect(url_for("show_nutrition_plan"))
 
+# Chức năng xem lịch sử tập luyện
+@app.route("/show_workout_history")
+def show_workout_history():
+    username = session.get("username")
+    user = User.query.filter_by(username=username).first()
+
+    if not user:
+        return "User không tồn tại", 404
+
+    workout_histories = WorkoutHistory.query.filter_by(user_id=user.user_id).all()
+    return render_template("show_workout_history.html", workout_histories=workout_histories)
+
+
+# Chức năng thêm lịch sử tập luyện
+@app.route("/add_workout_history/<int:id>", methods=["GET","POST"])
+def add_workout_history(id):
+    username = session.get("username")
+    user = User.query.filter_by(username=username).first()  # Lấy user từ username
+    if not user:
+        return "User không tồn tại", 404
+
+    workout = Workout.query.get_or_404(id)
+    date_today = date.today()
+
+    # Kiểm tra lịch sử đã tồn tại
+    existing_history = WorkoutHistory.query.filter_by(user_id=user.user_id, workout_id=id, date=date_today).first()
+
+    if existing_history:
+        return redirect(url_for("show_workout_history"))
+
+    # Tạo lịch sử mới
+    new_history = WorkoutHistory(user_id=user.user_id, workout_id=id, date=date_today)
+    db.session.add(new_history)
+    db.session.commit()
+    return redirect(url_for("show_workout_history"))
+    
 
 if __name__ == '__main__':
     with app.app_context():

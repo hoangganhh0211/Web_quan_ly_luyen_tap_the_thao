@@ -1,5 +1,6 @@
-{% extends "layout.html" %} {% block body %} {% if session["username"] ==
-"admin" %}
+{% extends "layout.html" %} 
+{% block body %} 
+{% if session["username"] =="admin" %}
 <a href="/add_nutrition_plan">Thêm kế hoạch dinh dưỡng</a>
 {% endif %}
 <div class="nutrition-plan">
@@ -8,7 +9,9 @@
   <h2>{{ nutrition_plan.plan_name }}</h2>
   <p>{{ nutrition_plan.plan_description }}</p>
   <a href="/nutrition_plan_detail/{{nutrition_plan.nutrition_plan_id}}">Xem chi tiết</a>
+  {% if session["username"] == "admin" %}
   <a href="/delete_nutrition_plan/{{ nutrition_plan.nutrition_plan_id}}">Xóa</a>
+  {% endif %}
   {% endfor %}
 </div>
 {% endblock %}

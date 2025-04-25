@@ -32,8 +32,7 @@ class WorkoutHistory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"), nullable=False)
     workout_id = db.Column(db.Integer, db.ForeignKey("workouts.workout_id"), nullable=False)
-    date = db.Column(db.DateTime, default=datetime.utcnow)
-    duration_minutes = db.Column(db.Integer)
+    date = db.Column(db.DateTime, default=datetime.today, nullable=False)
 
 # Bảng kế hoạch dinh dưỡng
 class NutritionPlan(db.Model):

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class="workout-history">
+        <h1>Lịch sử tập luyện</h1>
+        {% if workout_histories %}
+        <ul>
+            {% for workout_history in workout_histories %}
+                <li>
+                    <strong>{{ workout_history.workout.title }}</strong> - {{ workout_history.date.strftime('%d/%m/%Y') }} 
+                </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <p>Chưa có bài tập nào được ghi nhận.</p>
+        {% endif %}
+    </div>
+{% endblock %}
