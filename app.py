@@ -32,6 +32,11 @@ def register():
         existing_user = User.query.filter_by(username=username).first()
         if existing_user:
             return render_template("register.html", error="Tên đăng nhập đã tồn tại")
+        
+        # Kiểm tra xem email đã tồn tại chưa
+        existing_email = User.query.filter_by(email=email).first()
+        if existing_email:
+            return render_template("register.html", error="Email đã được sử dụng")
 
         # Tạo người dùng mới
         new_user = User(username=username, email=email, password=password, height=height, weight=weight)
